@@ -778,7 +778,7 @@ Los nodos pueden estar desplegados o seleccionados por defecto.
 ### Contenido personalizado en los nodos
 El contenido de los nodos puede ser personalizado, así que puede añadir iconos y botones a su gusto.
 
-:::demo There are two ways to customize template for tree nodes: `render-content` and scoped slot. Utilice `render-content` para asignar una función de renderizado que devuelve el contenido del árbol de nodos. Mire la documentación de node para una introducción detallada a las funciondes de renderizado. If you prefer scoped slot, you'll have access to `node` and `data` in the scope, standing for the TreeNode object and node data of the current node respectively. Ten en cuenta que este ejemplo no puede ejecutarse en jsfiddle ya que no soporta la sintaxis JSX. En un proyecto real `render-content` funcionará si las dependencias relevantes están configuradas correctamente.
+:::demo Hay dos maneras de personalizar la plantilla para los nodos de árbol: `render-content` y scoped slot. Utilice `render-content` para asignar una función de renderizado que devuelve el contenido del árbol de nodos. Mire la documentación de node para una introducción detallada a las funciondes de renderizado. Si prefiere scoped slot, tendrá acceso a los `nodos` y `datos` en el ámbito de aplicación, representando el objeto TreeNode y los datos del nodo actual respectivamente. Tenga en cuenta que este ejemplo no puede ejecutarse en jsfiddle ya que no soporta la sintaxis JSX. En un proyecto real `render-content` funcionará si las dependencias relevantes están configuradas correctamente.
 ```html
 <div class="custom-tree-container">
   <div class="block">
@@ -1185,8 +1185,8 @@ Puede arrastrar y soltar nodos de Tree añadiendo un atributo `draggable` .
 | filter-node-method    | Esta función se ejecutará en cada nodo cuando se use el método filtrtar, si devuelve `false` el nodo se oculta | Function(value, data, node)       | —                 | —           |
 | accordion             | Si solo un nodo de cada nivel puede expandirse a la vez | boolean                           | —                 | false       |
 | indent                | Indentación horizontal de los nodos en niveles adyacentes, en pixeles | number                            | —                 | 16          |
-| icon-class            | Custome tree node icon                                                | string                            | -                 | -           |
-| lazy                  | whether to lazy load leaf node, used with `load` attribute  | boolean                     | —    | false |
+| icon-class            | Icono del nodo del árbol de cliente                                                | string                            | -                 | -           |
+| lazy                  | si se trata de un nodo de hoja lazy load, utilizado con el atributo `load`  | boolean                     | —    | false |
 | draggable             | si se habilita la función de drag and drop en los nodos | boolean            | —    | false |
 | allow-drag            | esta función se ejecutará antes de arrastrar un nodo. si devuelve `false`, el nodo no puede ser arrastrado. | Function(nodo) | —  | —  |
 | allow-drop            | esta función se ejecutará al arrastrar y soltar un nodo. si devuelve false, el nodo arrastrando no se puede soltar en el nodo destino. `type` tiene tres valores posibles: 'prev' (insertar el nodo de arrastre antes del nodo de destino), 'inner' (insertar el nodo de arrastre en el nodo de destino) y 'next' (insertar el nodo de arrastre después del nodo de destino) | Function(Nodoquesearrastra, Nododestino, type) | —    | —     |
@@ -1212,7 +1212,7 @@ Puede arrastrar y soltar nodos de Tree añadiendo un atributo `draggable` .
 | getHalfCheckedNodes | Si el nodo puede ser seleccionado (`show-checkbox` es `true`), devuelve la mitad del array de nodos actualmente seleccionada. | - |
 | getHalfCheckedKeys | Si el nodo puede ser seleccionado (`show-checkbox` es `true`), devuelve la mitad del array de claves del nodo actualmente seleccionado. | - |
 | getCurrentKey     | devuelve la clave del nodo resaltado actualmente (null si no hay ninguno) | —                                        |
-| getCurrentNode    | devuelve el nodo resaltado (null si no hay ninguno) | —                                        |
+| getCurrentNode    | return the highlight node's data (null if no node is highlighted)         | —                                        |
 | setCurrentKey     | establece el nodo resaltado por la clave, solo funciona si `node-key` está asignado | (key) la clave del nodo a ser resaltado. If `null`, cancel the currently highlighted node  |
 | setCurrentNode    | establece el nodo resaltado, solo funciona si `node-key` está asignado | (node) nodo a ser resaltado              |
 | getNode         | devuelve el nodo por el dato o la clave | (data) los datos o clave del nodo |
